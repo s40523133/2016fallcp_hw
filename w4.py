@@ -1,3 +1,1 @@
-mystring : ("s40523133")
-mystring : mystring + "test"
-print("mystring")
+print("s40523133")
