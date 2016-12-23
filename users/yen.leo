@@ -64,7 +64,7 @@
 <v t="amd.20160727114506.1" a="E"><vh>201609</vh>
 <v t="amd.20160727120222.1"><vh>@edit 20160921.md</vh></v>
 <v t="leo.20161014142409.1"><vh>@edit 20161014.md</vh></v>
-<v t="leo.20161216153256.1" a="E"><vh>@clean 20161216.md</vh>
+<v t="leo.20161216153256.1"><vh>@clean 20161216.md</vh>
 <v t="leo.20161216153256.2"><vh>ch01 print() 與 input()</vh></v>
 <v t="leo.20161216153256.3"><vh>cp a w13</vh></v>
 <v t="leo.20161216153256.4"><vh>Brython editor</vh></v>
@@ -74,6 +74,7 @@
 <v t="leo.20161216153256.8"><vh>ex4 - local_storage</vh></v>
 <v t="leo.20161216153256.9"><vh>ch02 str() 與 int() 與 float()</vh></v>
 </v>
+<v t="leo.20161223154730.1"><vh>@edit 20161223.md</vh></v>
 </v>
 </v>
 </v>
