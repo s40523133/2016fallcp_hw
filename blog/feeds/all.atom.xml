@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-12-16T13:00:00+08:00</updated><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-16T13:00:00+08:00</published><updated>2016-12-16T13:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-12-16:./w14-lian-xi.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2016-12-16T13:00:00+08:00</updated><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-16T13:00:00+08:00</published><updated>2016-12-16T13:00:00+08:00</updated><author><name>chen</name></author><id>tag:,2016-12-16:./w14-lian-xi.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
-&lt;p&gt;以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.&lt;/p&gt;
-&lt;p&gt;本課程 W15 - W18 週將利用 &lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&gt;introduction_to_prog_python3_2012.pdf&lt;/a&gt; 與 &lt;a href="./../course/python_for_everybody_2015.pdf"&gt;python_for_everybody_2015.pdf&lt;/a&gt; 中有關物件導向的說明, 並且配合 &lt;a href="https://github.com/mdecourse/webgame"&gt;https://github.com/mdecourse/webgame&lt;/a&gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&lt;a href="http://mde.tw/webgame/bs.html"&gt;靜態圖檔&lt;/a&gt;、&lt;a href="http://mde.tw/webgame/bunny.html"&gt;動態圖檔&lt;/a&gt;與&lt;a href="http://mde.tw/webgame/spacewar.html"&gt;網際遊戲&lt;/a&gt;的運作原理, 順利完成各組的期末報告.&lt;/p&gt;
 &lt;!-- 導入 FileSaver --&gt;
 
 &lt;script type="text/javascript" src="./../FileSaver.min.js"&gt;&lt;/script&gt;
@@ -90,29 +88,6 @@ doc['w13'].bind('click',numPrint)
 &lt;/script&gt;
 
 &lt;p&gt;&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-&lt;div id="container"&gt;&lt;/div&gt;
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-from browser import html
-# 利用 document 根據 div 標註 id 設為 container 變數
-container = doc['container']
-
-# 因為此函式與滑鼠互動, 需要 event 當作輸入
-def numPrint(ev):
-    mystring = ""
-    num = input("請輸入重複執行次數:")
-    #for i in range(1, 11):
-    for i in range(1, int(num)+1):
-        mystring += str(i) + ": hello mde" + html.BR()
-    container &lt;= mystring
-
-# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
-doc['w13'].bind('click',numPrint)
-&lt;/script&gt;
-&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
-&lt;/pre&gt;
-
 &lt;p&gt;開始進行範例分類:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -146,25 +121,26 @@ doc['w13-1'].bind('click',convTemp)
 
 &lt;p&gt;&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;&lt;/p&gt;
 &lt;pre class="brush: python"&gt;
-&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
 &lt;script type="text/python3"&gt;
 from browser import document as doc
 from browser import html
 # 利用 document 根據 div 標註 id 設為 container 變數
-container = doc['temperature']
+container = doc['container']
 
 # 因為此函式與滑鼠互動, 需要 event 當作輸入
-def convTemp(event):
+def numPrint(ev):
     mystring = ""
-    cdegree = input("請輸入攝氏溫度:")
-    fdegree = float(cdegree)*9/5 + 32
-    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
-    container &lt;= output_string
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
 
-# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
-doc['w13-1'].bind('click',convTemp)
+# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
+doc['w13'].bind('click',numPrint)
 &lt;/script&gt;
-&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;
+&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
 &lt;/pre&gt;
 
 &lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
@@ -401,7 +377,7 @@ doc['ex4'].bind('click',ex4)
 &lt;script type="text/python3"&gt;
 from browser import document
 from browser import alert
-&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>2016Fall 程式練習題</title><link href="./2016fall-cheng-shi-lian-xi-ti.html" rel="alternate"></link><published>2016-10-22T12:00:00+08:00</published><updated>2016-10-22T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-22:./2016fall-cheng-shi-lian-xi-ti.html</id><summary type="html">&lt;p&gt;已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
+&lt;/script&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>2016Fall 程式練習題</title><link href="./2016fall-cheng-shi-lian-xi-ti.html" rel="alternate"></link><published>2016-10-22T12:00:00+08:00</published><updated>2016-10-22T12:00:00+08:00</updated><author><name>chen</name></author><id>tag:,2016-10-22:./2016fall-cheng-shi-lian-xi-ti.html</id><summary type="html">&lt;p&gt;已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
 
 
 &lt;p&gt;以下利用 Brython 讀取位於倉儲中的 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt; 與 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt; 資料檔案.&lt;/p&gt;
@@ -481,7 +457,7 @@ for i in not_in_group:
     container3 &lt;= "第"+str(n)+"位: "+ str(i)
     n = n + 1
     container3 &lt;= html.BR()
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 機械設計主題</title><link href="./2016fall-ji-jie-she-ji-zhu-ti.html" rel="alternate"></link><published>2016-09-02T12:00:00+08:00</published><updated>2016-09-02T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-09-02:./2016fall-ji-jie-she-ji-zhu-ti.html</id><summary type="html">&lt;p&gt;知識管理與最佳化應用實驗室試圖利用計算機程式、網際內容管理、電腦輔助設計實習與協同產品設計實習等課程, 進行與機械設計相關的主題式教學, 其中包含強化創造力的教學、令學員熟習六種工程表達方式, 並且俱備融入協同設計所需要的四大面向知識與技能.&lt;/p&gt;
+&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 機械設計主題</title><link href="./2016fall-ji-jie-she-ji-zhu-ti.html" rel="alternate"></link><published>2016-09-02T12:00:00+08:00</published><updated>2016-09-02T12:00:00+08:00</updated><author><name>chen</name></author><id>tag:,2016-09-02:./2016fall-ji-jie-she-ji-zhu-ti.html</id><summary type="html">&lt;p&gt;知識管理與最佳化應用實驗室試圖利用計算機程式、網際內容管理、電腦輔助設計實習與協同產品設計實習等課程, 進行與機械設計相關的主題式教學, 其中包含強化創造力的教學、令學員熟習六種工程表達方式, 並且俱備融入協同設計所需要的四大面向知識與技能.&lt;/p&gt;
 
 
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1

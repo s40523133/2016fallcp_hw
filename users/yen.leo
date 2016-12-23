@@ -357,15 +357,13 @@ Title:W14 練習
 Date: 2016-12-16 13:00
 Category: Course
 Tags: Brython
-Author: yen
+Author: chen
 
 
 
 &lt;!-- PELICAN_END_SUMMARY --&gt;
 
-以下為 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.
 
-本課程 W15 - W18 週將利用 &lt;a href="./../course/introduction_to_prog_python3_2012.pdf"&gt;introduction_to_prog_python3_2012.pdf&lt;/a&gt; 與 &lt;a href="./../course/python_for_everybody_2015.pdf"&gt;python_for_everybody_2015.pdf&lt;/a&gt; 中有關物件導向的說明, 並且配合 &lt;a href="https://github.com/mdecourse/webgame"&gt;https://github.com/mdecourse/webgame&lt;/a&gt; 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理&lt;a href="http://mde.tw/webgame/bs.html"&gt;靜態圖檔&lt;/a&gt;、&lt;a href="http://mde.tw/webgame/bunny.html"&gt;動態圖檔&lt;/a&gt;與&lt;a href="http://mde.tw/webgame/spacewar.html"&gt;網際遊戲&lt;/a&gt;的運作原理, 順利完成各組的期末報告.
 
 &lt;!-- 導入 FileSaver --&gt;
 &lt;script type="text/javascript" src="./../FileSaver.min.js"&gt;&lt;/script&gt;
@@ -450,28 +448,7 @@ doc['w13'].bind('click',numPrint)
 &lt;/script&gt;
 &lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
 
-&lt;pre class="brush: python"&gt;
-&lt;div id="container"&gt;&lt;/div&gt;
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-from browser import html
-# 利用 document 根據 div 標註 id 設為 container 變數
-container = doc['container']
 
-# 因為此函式與滑鼠互動, 需要 event 當作輸入
-def numPrint(ev):
-    mystring = ""
-    num = input("請輸入重複執行次數:")
-    #for i in range(1, 11):
-    for i in range(1, int(num)+1):
-        mystring += str(i) + ": hello mde" + html.BR()
-    container &lt;= mystring
-
-# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
-doc['w13'].bind('click',numPrint)
-&lt;/script&gt;
-&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
-&lt;/pre&gt;
 
 開始進行範例分類:
 
@@ -502,27 +479,27 @@ doc['w13-1'].bind('click',convTemp)
 &lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;
 
 &lt;pre class="brush: python"&gt;
-&lt;div id="temperature"&gt;&lt;/div&gt;
+&lt;div id="container"&gt;&lt;/div&gt;
 &lt;script type="text/python3"&gt;
 from browser import document as doc
 from browser import html
 # 利用 document 根據 div 標註 id 設為 container 變數
-container = doc['temperature']
+container = doc['container']
 
 # 因為此函式與滑鼠互動, 需要 event 當作輸入
-def convTemp(event):
+def numPrint(ev):
     mystring = ""
-    cdegree = input("請輸入攝氏溫度:")
-    fdegree = float(cdegree)*9/5 + 32
-    output_string = "攝氏 " + str(cdegree) + "度=華氏 " + str(fdegree) + "度" + html.BR()
-    container &lt;= output_string
+    num = input("請輸入重複執行次數:")
+    #for i in range(1, 11):
+    for i in range(1, int(num)+1):
+        mystring += str(i) + ": hello mde" + html.BR()
+    container &lt;= mystring
 
-# 與 id 為 'w13-1' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 convTemp 函式執行
-doc['w13-1'].bind('click',convTemp)
+# 與 id 為 'w13' 對應的 button 綁定, 且滑鼠 click 後, 呼叫 numPrint 函式執行
+doc['w13'].bind('click',numPrint)
 &lt;/script&gt;
-&lt;button id="w13-1"&gt;取攝氏溫度, 轉為華氏溫度&lt;/button&gt;
-&lt;/pre&gt;
-</t>
+&lt;button id="w13"&gt;取重複執行次數後, 列印出來&lt;/button&gt;
+&lt;/pre&gt;</t>
 <t tx="leo.20161216153256.4">&lt;script src="./../ace/ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
 &lt;script src="./../ace/ext-language_tools.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
 &lt;script src="./../ace/mode-python3.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
