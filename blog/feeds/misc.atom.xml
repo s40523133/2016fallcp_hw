@@ -37,7 +37,6 @@ brython(1);
 from browser import document
 import math
 
-# 準備繪圖畫布
 canvas = document["dc1"]
 ctx = canvas.getContext("2d")
 
@@ -61,6 +60,16 @@ line(200,200,300,200)
 line(200,200,200,300)
 
 circle(200, 200, 10)
+
+x1 = 200
+y1 = 200
+r = 100 
+deg = math.pi/180
+
+for i in range(36):
+    x2 = x1 + r*math.cos(i*10*deg)
+    y2 = y1 + r*math.sin(i*10*deg)
+    line(x1,y1,x2,y2)
 &lt;/script&gt;</summary><category term="2017.1.6"></category></entry><entry><title>元旦快樂</title><link href="./yuan-dan-kuai-le.html" rel="alternate"></link><published>2016-12-30T12:00:00+08:00</published><updated>2016-12-30T12:00:00+08:00</updated><author><name>chen</name></author><id>tag:,2016-12-30:./yuan-dan-kuai-le.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
