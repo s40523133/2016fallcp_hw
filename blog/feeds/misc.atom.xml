@@ -34,12 +34,16 @@ brython(1);
 &lt;canvas id="dc1" width="650" height="450"&gt;&lt;/canvas&gt;
 
 &lt;script type="text/python"&gt;
-from browser import document
+from browser import document 
+from browser import window
+from browser import timer
 import math
 
 canvas = document["dc1"]
 ctx = canvas.getContext("2d")
 
+width =  canvas.width
+height = canvas.height
 def circle(x,y,r):
     ctx.beginPath()
     ctx.arc(x, y, r, 0, math.pi*2, True)
@@ -66,10 +70,28 @@ y1 = 200
 r = 100 
 deg = math.pi/180
 
+theta = 0
+
+'''
 for i in range(36):
     x2 = x1 + r*math.cos(i*10*deg)
     y2 = y1 + r*math.sin(i*10*deg)
     line(x1,y1,x2,y2)
+'''
+def animate():
+    global theta
+    ctx.clearRect(0,0,width,height)
+    ctx.fillstyle= "#000000"
+    x2 = x1 + r*math.cos(theta*deg)
+    y2 = y1 + r*math.sin(theta*deg)
+    line(x1,y1,x2,y2)
+    x3 = x2 + 50*math.cos(10*theta*deg)
+    y3 = y2 + 50*math.sin(10*theta*deg)
+    line(x2,y2,x3,y3)
+    circle(x1,y1,5)
+    theta += 1
+timer.set_interval(animate,50)
+
 &lt;/script&gt;</summary><category term="2017.1.6"></category></entry><entry><title>元旦快樂</title><link href="./yuan-dan-kuai-le.html" rel="alternate"></link><published>2016-12-30T12:00:00+08:00</published><updated>2016-12-30T12:00:00+08:00</updated><author><name>chen</name></author><id>tag:,2016-12-30:./yuan-dan-kuai-le.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
